@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-A2#1 (Tasks 14)</title>
+</head>
+<body>
+    <script>
+        let numbers = [12,13,14,15,16,17];
+        
+        
+        let len = numbers.length;
+        let finalNum = "SEQUENCE";
+        for(let i=0; i<len-1; i++)
+        {
+           if((Math.floor(numbers[i+1]) - Math.floor(numbers[i])) != 1)
+           {
+                finalNum = "NOT";
+                break;
+           }
+        }
+        console.log(finalNum);
+        
+        
+        
+    </script>
+</body>
+</html>

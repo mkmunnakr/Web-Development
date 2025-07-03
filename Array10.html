@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-A2#1 (Tasks 10)</title>
+</head>
+<body>
+    <script>
+        let num1 = [1,2,3];
+        let num2 = [10,20,30];
+        let sum1 = 0;
+        let sum2 =0;
+        let len1 = num1.length;
+        let len2 = num2.length;
+        for(let i=0; i<len1; i++)
+        {
+            sum1 = sum1 + num1[i];
+        }
+        for(let i=0; i<len2; i++)
+        {
+            sum2 = sum2 + num2[i];
+        }
+
+        if(sum1 == sum2)
+        {
+            console.log("Equal");
+
+        }
+        
+        else if(sum1 < sum2)
+        {
+            console.log("Big2");
+        }
+        else 
+        {
+            console.log("Big1");
+        }
+        
+    </script>
+</body>
+</html>

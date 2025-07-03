@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check the string (practice 7)</title>
+</head>
+<body>
+    <p>Given an array of strings, count </p>
+    <p>the string which have the alphabet b or B in them.</p>
+
+    <script>
+        function hasString(str)
+        {
+            let len = str.length;
+            let stringValue =false;
+            for(let i=0; i<len; i++)
+            {
+               if(str[i] == 'b' ||str[i] == "B")
+               {
+                    stringValue = true;
+                    break;
+
+               } 
+               
+            }
+            return stringValue;
+        }
+        function isString(strings)
+        {
+            let n = strings.length;
+            for(let i=0; i<n; i++)
+            {
+                let check = hasString(strings[i]);
+                if(check)
+                {
+                    console.log("found char is ",strings[i] );
+                   
+                    stringValue = true;
+                    
+                }
+                else 
+                {
+                    
+                    stringValue = false;
+                }
+
+            }
+            console.log(stringValue);
+        }
+
+        let name = ["amnak","pounnn","banb"];
+        isString(name);
+    </script>
+</body>
+</html>

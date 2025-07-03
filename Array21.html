@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-A2#1 (TaJsks 21)</title>
+</head>
+<body>
+    <script>
+        const strs = ['Jack','Bob','Ed','Steve'];
+        //find and removed Bob --splice
+        for(let i=0;i<strs.length;i++)
+        {
+            if(strs[i]=='Bob')
+            {
+                strs.splice(i,1);
+                break; //break out of the loop
+            }
+        } 
+        console.log(strs);
+
+    </script>
+</body>
+</html>

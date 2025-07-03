@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-A2#1 (TaJsks 25)</title>
+</head>
+<body>
+    <script>
+        let arr1 =[5,18,26,30];
+        let arr2 = [101,102];
+        let concate = [];
+        let maxLength = Math.max(arr1.length,arr2.length);
+        for(let i=0; i<maxLength; i++)
+        {
+            if(i < arr1.length)
+            {
+                concate.push(arr1[i]);
+            }
+            if(i < arr2.length)
+            {
+                concate.push(arr2[i]);
+            }
+        }
+        console.log(concate);
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 8</title>
+</head>
+<body>
+    <p>Given an array of strings, find Hello</p>
+    <p>and remove it from array</p>
+    <script>
+        const strs = ['Hi','Hello','Hey','He'];
+        //find and removed Hello --splice
+        for(let i=0;i<strs.length;i++)
+        {
+            if(strs[i]=='Hello')
+            {
+                strs.splice(i,1);
+                break; //break out of the loop
+            }
+        } 
+        console.log(strs);
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 7</title>
+</head>
+<body>
+    <p>Given an array of numbers , create a <br>new array with numbers not divisible by 3.</p>
+
+    <script>
+        const nums = [2,3,4,10,11,12];
+        const numsNo3 = [];
+        for(let i=0; i<nums.length; i++)
+        {
+            if(nums[i]%3 !=0)
+            {
+                numsNo3.push(nums[i]);
+            }
+        }
+        console.log(numsNo3);
+    </script>
+</body>
+</html>

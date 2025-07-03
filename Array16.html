@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-A2#1 (Tasks 16)</title>
+</head>
+<body>
+    <script>
+         function isString(str)
+        {
+            let len = str.length;
+            let stringValue = "AB NOT FOUND" ;
+            for(let i=0; i<len; i++)
+            {
+               if(str[i] == 'a' && str[i+1] == 'b' )
+               {
+                    stringValue = "AB FOUND";
+                    break;
+
+               } 
+               
+            }
+            return stringValue;
+        }
+        let str = isString("acbcadbd");
+        console.log(str);
+    </script>
+</body>
+</html>

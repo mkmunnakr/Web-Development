@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-A2#1 (Tasks 12)</title>
+</head>
+<body>
+    <script>
+        let numbers = [5,18,26,30,40,6];
+        //let numbers = [40,40,40,40,40];
+        let len = numbers.length;
+        let finalStr="ALLSAME";
+        let num0=numbers[0]
+        for(let i=0; i<len; i++)
+        {
+           if(numbers[i]!=num0)
+           {
+               finalStr="DIFFERENT";
+               break; 
+           }
+        }
+
+        console.log(finalStr);
+        
+        
+    </script>
+</body>
+</html>

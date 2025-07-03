@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-A2#1 (TaJsks 23)</title>
+</head>
+<body>
+    <script>
+        let arr1 = [5,18,26,30,40] ;
+        arr1.push(6);
+        console.log(arr1);
+        function AssendingOrder(arr1)
+        {
+            let len = arr1.length;
+       
+        for(let i=0 ; i< len-1 ;i++)
+        {
+            for(let j=0 ; j< len-i-1; j++)
+            {
+                if(arr1[j] > arr1[j+1])
+                {
+                    let temp = arr1[j+1];
+                    arr1[j+1] = arr1[j];
+                    arr1[j]  = temp;
+                    
+                }
+            }
+            
+        }
+       return arr1;
+        
+    }
+    //let arr1 = [5,18,26,30,40,6];
+    AssendingOrder(arr1);
+
+       console.log(AssendingOrder(arr1));
+        
+    </script>
+</body>
+</html>

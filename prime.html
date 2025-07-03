@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Prime (Practice 5)</title>
+</head>
+<body>
+    <p>Define a function which takes </p>
+    <p>an array of numbers as parameter <br> and returns true if there is<br> a prime number in the array</p>
+
+    <script>
+        function isPrime(num)
+        {
+            
+            let primeVal = true;
+
+            if(num < 1)
+            {
+                primeVal = false;
+            }
+
+            for(let i=2; i<=(num/2); i++)
+            {
+                if((num)%i==0)
+                {
+                    primeVal = false;
+                }
+            }
+            return primeVal;
+        }
+
+        function checkPrime(number)
+        {
+            let n = number.length;
+            
+            for(let i=0; i<n; i++)
+            {
+                let check = isPrime(number[i]);
+                if(check)
+                {
+                    console.log("Found Prime number is ",number[i]);
+                        primeVal = true;
+                    break;
+
+                }
+                else {
+                    primeVal = false;
+                }
+            }
+            console.log(primeVal);
+        }
+        let numbers = [9,4,6,7,8,4];
+        console.log(checkPrime(numbers));
+    </script>
+</body>
+</html>

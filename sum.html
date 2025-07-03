@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sum (practice 3)</title>
+</head>
+<body>
+    <p> sum of numbers divisible by 5</p>
+    <script>
+        let numbers = [3,5,10,54,35,47,15,20];
+        let len = numbers.length;
+        let sum = 0;
+
+        for(let i=0; i<len; i++)
+        {
+            if(numbers[i]%5 == 0)
+            {
+                sum += numbers[i];
+            }
+        }
+        console.log("sum of even number divisable by 5 is ",sum);
+    </script>
+</body>
+</html>
