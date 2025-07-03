@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-A2#3 (Tasks 6.4 & 6.8 )</title>
+</head>
+<body>
+    <script>
+        
+        const studentData = [
+        {name:"Jack",maths:55,english:60,science:62},
+        {name:"Anita",maths:62,english:65,science:56},
+        {name:"Thmos",maths:68,english:72,science:75},
+        {name:"Steve",maths:51,english:56,science:68},
+        {name:"Julia",maths:47,english:77,science:72},
+        {name:"Mary",maths:72,english:55,science:81},
+        ];
+       
+
+        let find = studentData.find(function(num)
+        {
+            let n = 180;
+            return (num.maths + num.english + num.science) > n;
+        });
+        console.log(find);
+
+        let index = studentData.findIndex(function(num){
+           let n = 180;
+            return (num.maths + num.english + num.science) > n;
+        });
+        console.log(index);
+
+        let farr = studentData.filter(function(num){
+           let n = 180;
+            return (num.maths + num.english + num.science) > n;
+        });
+        console.log(farr);
+    </script>
+    
+</body>
+</html>

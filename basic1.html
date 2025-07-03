@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Array(Practice 1)</title>
+</head>
+<body>
+    <script>
+        const nums = [7,9,11,24,25,12];
+        let check = nums.find(function(num)
+        {
+           
+           return num % 2 ==0;
+        });
+        let index = nums.findIndex(function(num)
+        {
+            return num % 2 ==0;
+        })
+        let farr = nums.filter(function(num)
+        {
+            return num % 2 ==0;
+        })
+
+        console.log('Find number is ',check);
+        console.log('Find number is ',index);
+        console.log('Find number is ',farr);
+    </script>
+</body>
+</html>

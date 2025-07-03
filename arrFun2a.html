@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-A2#3 (Tasks 2.1 & 2.2 a)</title>
+</head>
+<body>
+    <p>
+        Given an array of numbers, find the number and its index for and filter
+
+    </p>
+    <p>(a) equal to 10</p>
+    <p>Create suitable test cases and test properly</p>
+    <script>
+        const nums = [2,4,6,7,59,69,10,87,51,10,4,6];
+        let check = nums.find(function(num)
+        {
+           
+            return num == 10;
+        });
+        let index = nums.findIndex(function(num)
+        {
+            return num == 10;
+        })
+        let farr = nums.filter(function(num)
+        {
+            return num == 10;
+        })
+
+        console.log('Find number is ',check);
+        console.log('Find number is ',index);
+        console.log('Find number is ',farr);
+    </script>
+</body>
+</html>

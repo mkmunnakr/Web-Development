@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 4</title>
+</head>
+<body>
+    <script>
+        const emps = [
+        {name:'Jack',city:'Delhi',dept:'Tech'} ,
+        {name:'Anna',city:'Landon',dept:'Tech'},
+        {name:'Sam',city:'Londan',dept:'HR'},
+        {name:'Tim',city:'Delhi',dept:'HR'},
+        {name:'Bon',city:'Delhi',dept:'Tech'},
+        {name:'Mary',city:'Landon',dept:'Tech'},
+        ];
+        let city = 'Delhi';
+        let dept = 'Tech' ;
+        let emp1 = emps.find(function(emp){
+            return emp.city == city && emp.dept == dept ;
+        });
+        console.log(emp1)
+
+        let index = emps.findIndex(function(emp){
+            return emp.city == city && emp.dept == dept ; 
+        });
+        console.log(index);
+
+        let farr = emps.filter(function(emp){
+            return emp.city == city && emp.dept == dept ;
+        });
+        console.log(farr);
+    </script>
+</body>
+</html>

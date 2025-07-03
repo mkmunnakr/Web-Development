@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-A2#3 (Tasks 7.3)</title>
+</head>
+<body>
+    <p>Filter the array for those whose names has less than 6 characters.<br>
+    Also find and findIndex the first JSON whose names has less than 6 characters.</p>
+    <script>
+        
+        const humanData = [
+            {name:"Jack",country:"USA",age:35},
+            {name:"Amit",country:"India",age:38},
+            {name:"Edward",country:"USA",age:41},
+            {name:"Vishal",country:"India",age:30},
+            {name:"Annie",country:"USA",age:27},
+            {name:"Nick",country:"France",age:32},
+            {name:"Francis",country:"France",age:44},
+            {name:"Preeti",country:"India",age:25},
+            {name:"Sophie",country:"France",age:29},
+            {name:"Harpreet",country:"India",age:48},
+            {name:"Bob",country:"USA",age:21},
+            ];
+            let country = "India";
+           
+            let find = humanData.find(function(hum){
+                return hum.name.length < 6;
+            });
+            console.log(find);
+
+            let index = humanData.findIndex(function(hum){
+                return hum.name.length < 6;
+            });
+            console.log(index);
+
+            let farr = humanData.filter(function(hum){
+                return hum.name.length < 6;
+            });
+            console.log(farr);
+    </script>
+</body>
+</html>

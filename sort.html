@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shorting Assending</title>
+</head>
+<body>
+    <script>
+        const nums = [2,10,24,5,6];
+        const numsCopy = [...nums]; //spread operator
+        nums.sort(compNumbersAsse);
+        function compNumbersAsse(num1,num2)
+        {
+            if(num1 > num2)
+            return 1; //later
+
+            else if(num1 < num2)
+            return -1;  //earlier
+
+            else 
+            return 0;  //same
+        } 
+        console.log(numsCopy);  //copy number
+        console.log(nums);   // asseding order
+    </script>
+</body>
+</html>

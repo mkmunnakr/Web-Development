@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-A2#3 (Tasks 3.1 & 3.2 a)</title>
+</head>
+<body>
+    <p>Given an array of names, find the name and its index for <br>
+        (a) length of name is greater than 5  <br>
+        suitable test cases and test properly
+    </p>
+    <script>
+        const names = ['Jack','Anna','Sam','PayalKumari','AnshuYadav'];
+        const len = 5;
+        let find = names.find(function(name){
+            return name.length > len;
+        });
+        console.log(find);
+
+        let index = names.findIndex(function(name){
+            return name.length > len;
+        });
+        console.log(index);
+
+        let farr = names.filter(function(name){
+            return name.length > len;
+        });
+        console.log(farr);
+        
+    </script>
+</body>
+</html>

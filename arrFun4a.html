@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-A2#3 (Tasks 4.1 & 4.2 a)</title>
+</head>
+<body>
+   <script>
+    const emps = [
+        {name:'Jack',age:32} ,
+        {name:'Anna',age:35},
+        {name:'Sam',age:40},
+        {name:'Tim',age:45},
+        {name:'Bon',age:22},
+        {name:'Mary',age:25},
+        ];
+        
+        let emp1 = emps.find(function(emp){
+            return emp.age < 35;
+        });
+        console.log(emp1)
+
+        let index = emps.findIndex(function(emp){
+            return emp.age < 35;
+        });
+        console.log(index);
+
+        let farr = emps.filter(function(emp){
+            return emp.age < 35;
+        });
+        console.log(farr);
+   </script> 
+</body>
+</html>

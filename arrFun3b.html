@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-A2#3 (Tasks 3.1 & 3.2 b)</title>
+</head>
+<body>
+    <p>
+        Given an array of names, find the name and its index for  and filter <br>
+        (b) starts with P <br>
+        suitable test cases and test properly
+    </p>
+        <script>
+        const names = ['Jack','Anna','Sam','Payal','Anshu'];
+        const ch = 'P';
+        let name1 = names.find(function(name)
+        {
+            return isStarting(name,ch);
+        });
+        console.log('Find ',name1);
+
+        function isStarting(name,start)
+        {
+            return name[0] == start;
+        }
+        let index = names.findIndex(function(name)
+        {
+            return isStarting(name,ch);
+        });
+
+        console.log('Index',index);
+
+        let arr = names.filter(function(name){
+            return isStarting(name,ch);
+        });
+
+        console.log(arr);
+    </script>
+</body>
+</html>

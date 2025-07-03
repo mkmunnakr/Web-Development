@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort String Ascending</title>
+</head>
+<body>
+    <script>
+        const names = ['Jack','Tim','Anna','Mark'];
+        names.sort(compNamesAsc);
+        function compNamesAsc(name1,name2)
+        {
+            return -1 * name1.localeCompare(name2);
+            //negative if names1 comes before
+            //names2 0 if same
+            // positive if names1 comes after name
+        }
+
+        console.log(names);
+    </script>
+</body>
+</html>
