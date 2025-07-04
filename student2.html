@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-A3#1a(Tasks 1.5)</title>
+    <style>
+        table ,td,tr,th {
+            border: 1px solid black;
+            border-collapse: collapse;
+            
+
+        }
+        table {
+            height: 13%;
+            width:25%;
+            text-align: center;
+        }
+        .head {
+            background-color: black;
+            color: aliceblue;
+        }
+        .remove-data {
+            background-color: red;
+            color: aliceblue;
+        }
+        div { 
+            margin-top: 10px;
+        }
+        .bor3 {
+            border-color: blue;
+        }
+        .first,.third {
+            background-color: rgb(47, 255, 82);
+        }
+        .second,.six {
+            background-color: palevioletred;
+        }
+    </style>
+</head>
+<body>
+    <h1>Students</h1>
+    <table>
+        <tr>
+            <th class="head">Name</th>
+            <th class="head">Math</th>
+            <th class="head">Computers</th>
+            <th class="head"></th>
+        </tr>
+        <tr class="first">
+            <td >Bob</td>
+            <td >82</td>
+            <td >88</td>
+            <td><button class="remove-data">Remove</button></td>
+        </tr>
+        <tr class="second">
+            <td >Jack</td>
+            <td >44</td>
+            <td >55</td>
+            <td><button class="remove-data">Remove</button></td>
+        </tr>
+        <tr class="third">
+            <td >Mary</td>
+            <td >91</td>
+            <td >73</td>
+            <td><button class="remove-data">Remove</button></td>
+        </tr>
+        <tr class="four">
+            <td >Dave</td>
+            <td >60</td>
+            <td >89</td>
+            <td><button class="remove-data">Remove</button></td>
+        </tr>
+        <tr class="five">
+            <td >Julia</td>
+            <td >58</td>
+            <td >60</td>
+            <td><button class="remove-data">Remove</button></td>
+        </tr>
+        <tr class="six">
+            <td >Steve</td>
+            <td >42</td>
+            <td >47</td>
+            <td><button class="remove-data">Remove</button></td>
+        </tr>
+    </table>
+    <div>
+        <button class="bor1">Show Students</button>
+        <button class="bor2">Highlight marks</button>
+        <button class="bor3">Highligth students</button>
+        <button class="bor4">clear</button>
+    </div>
+</body>
+</html>
