@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3(e)</title>
+    <link rel="stylesheet" href="className3.css">
+</head>
+<body>
+    <!-- Given the names and Marks of students in Maths and Computers 
+    a) Show the data in a table 
+    b) Highlight marks >=75 and those <=50 
+    c) Highlight the student with total >=150 or <=100
+    d) Clear the highlight in b and c 
+    e) Sort the Table on the field clicked in the header -->
+    <h2>Students</h2>
+    <div id="students"></div>
+    <button onclick="showStudents()">Show Students</button>
+    <button onclick="highMarks()">Highlight marks</button>
+    <button onclick="highStudent()">Highlight students</button>
+    
+    <script>
+        let highlightStudents = false;
+        let highlightMarks = false;
+        let students = [
+        {name:"Bob",maths:82,computers:88},
+        {name:"Jack",maths:44,computers:55},
+        {name:"Mary",maths:91,computers:73},
+        {name:"Dave",maths:60,computers:89},
+        {name:"Julia",maths:58,computers:60},
+        {name:"Steve",maths:42,computers:58},
+        ];
+        function showStudentsTable(){
+            const arr1 = students.map(function(ele){
+                let str = "<tr class=\""+getClassStudent(ele)+"\">";
+                    str+= "<td class=\"td1\">"+ele.name+"</td>";
+                    str+= "<td class=\""+getClassMarks(ele.maths)+"\">"+ele.maths+"</td>";
+                    str+= "<td class=\""+getClassMarks(ele.computers)+"\">"+ele.computers+"</td>";
+                    str+= "</tr>";
+                    return str;
+            });
+            let header = "<tr>";
+            header+= "<th class=\"th1\" onclick=\'sort(0)\'>Name</th>";
+            header+= "<th class=\"th1\" onclick=\'sort(1)\'>Maths</th>";
+            header+= "<th class=\"th1\" onclick=\'sort(2)\'>Computers</th>";    
+            header+= "</tr>";
+            let html = "<table class=\"table1\">"+header+arr1.join("")+"</table>"; 
+            console.log(html);
+            let element = document.getElementById("students");
+            element.innerHTML = html;   
+        }
+        function getClassMarks(marks) {
+            if(marks>=75 && highlightMarks)
+                return "td1 score75";
+            else if(marks<=50 && highlightMarks)
+                return "td1 score50";
+            else 
+                return "td1";
+        }
+        function getClassStudent(st)
+        {
+            let tot = st.maths + st.computers;
+            if(tot >=150 && highlightStudents)
+            return 'total150';
+            else if(tot <=100 && highlightStudents)
+            return 'total100';
+            else 
+            return '';
+        }
+        function highMarks(){
+            highlightMarks = true;
+            highlightStudents = false;
+            showStudentsTable();
+        }
+        function highStudent(){
+            highlightStudents = true;
+            highlightMarks = false;
+            showStudentsTable();
+        }
+        function showStudents() {
+             highlightStudents = false;
+            highlightMarks = false;
+            showStudentsTable();
+        }
+        function sort(colno) {
+            if(colno == 0)
+              students.sort(sortName);
+            else if(colno == 1)
+               students.sort(sortMaths);
+            else
+              students.sort(sortComputers);
+            showStudentsTable();
+        }
+        function sortName(st1,st2) {
+            return st1.name.localeCompare(st2.name);
+        }
+        function sortMaths(st1,st2) {
+            return st1.maths - st2.maths;
+        }
+        function sortComputers(st1,st2) {
+            return st1.computers - st2.computers;
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-A3#1b(Tasks 3)</title>
+    <link rel="stylesheet" href="className2.css">
+</head>
+<body>
+    <h2>List of People</h2>
+    <div id="peopleList"></div>
+    <button onclick="showPeople()">Show</button>
+    <button onclick="hidePeople()">Hide</button><br>
+    <button onclick="sortByName()">Sort by Name</button>
+    <button onclick="sortByCountry()">Sort by Country</button>
+    <button onclick="sortByAge()">Sort by Age</button><br>
+    <button onclick="sortByNameAndCountry()">Sort by Name And Country</button>
+    <button onclick="sortByCountryAndAge()">Sort by Country And Age</button><br>
+    <button onclick="filterIndia()">India</button>
+    <button onclick="filterUSA()">USA</button>
+    <button onclick="filterFrance()">France</button> <br>
+    <button onclick="styleByCountry()">Style by Country</button>
+    <button onclick="styleByAge()">Style by Age</button>
+    <script>
+        
+        const peoplesData = [
+            {name:"Jack",country:"USA",age:35},
+            {name:"Amit",country:"India",age:38},
+            {name:"Edward",country:"USA",age:41},
+            {name:"Vishal",country:"India",age:30},
+            {name:"Annie",country:"USA",age:27},
+            {name:"Nick",country:"France",age:32},
+            {name:"Francis",country:"France",age:44},
+            {name:"Preeti",country:"India",age:25},
+            {name:"Sophie",country:"France",age:29},
+            {name:"Harpreet",country:"India",age:48},
+            {name:"Bob",country:"USA",age:21}
+    ];
+
+    function showPeople(data = peoplesData){
+            const arr1 = data.map(function(ele){
+                let str = "<tr>";
+                    str+= "<td class=\"td1\">"+ele.name+"</td>";
+                    str+= "<td class=\"td1\">"+ele.country+"</td>";
+                    str+= "<td class=\"td1\">"+ele.age+"</td>";
+                    str+= "</tr>";
+                    return str;
+            });
+            let header = "<tr>";
+            header+= "<th class=\"th1\" onclick=\'sort(0)\'>Name</th>";
+            header+= "<th class=\"th1\" onclick=\'sort(1)\'>Country</th>";
+            header+= "<th class=\"th1\" onclick=\'sort(2)\'>Age</th>";    
+            header+= "</tr>";
+            let html = "<table class=\"table1\">"+header+arr1.join("")+"</table>"; 
+            console.log(html);
+            document.getElementById("peopleList").innerHTML = `<table class="table1">${header}${arr1.join("")}</table>`;
+              
+        }
+        function hidePeople() {
+        const listElement = document.getElementById("peopleList");
+        listElement.innerHTML = "";
+    }
+    function sortByName() {
+        peoplesData.sort(function(p1,p2){
+            return p1.name.localeCompare(p2.name);
+        });
+        showPeople();
+    }
+    function sortByCountry() {
+        peoplesData.sort(function(p1,p2){
+            return p1.country.localeCompare(p2.country);
+        });
+        showPeople();
+    }
+    function sortByAge(){
+        peoplesData.sort(function(age1,age2){
+            return age1.age - age2.age;
+        });
+        showPeople();
+    }
+    function sortByNameAndCountry() {
+        peoplesData.sort(function(p1,p2){
+            let countryCompare = p1.country.localeCompare(p2.country);
+            if(countryCompare !== 0)
+            return countryCompare;
+            return p1.name.localeCompare(p2.name);
+        });
+        showPeople();
+    }
+    function sortByCountryAndAge() {
+        peoplesData.sort(function(p1,p2){
+            let countryCompare = p1.country.localeCompare(p2.country);
+            if(countryCompare !== 0)
+            return countryCompare;
+            return p1.age - p2.age;
+        });
+        showPeople();
+    }
+    function filterIndia() {
+        let arr = peoplesData.filter(function(count){
+        return count.country.trim() == "India";
+           
+        });
+      //  console.log(arr);
+        showPeople(arr);
+    }
+    function filterUSA() {
+        let arr = peoplesData.filter(function(count){
+        return count.country == "USA";
+           
+        });
+        //console.log(arr);
+        showPeople(arr);
+    }
+    function filterFrance() {
+        let arr = peoplesData.filter(function(count){
+        return count.country == "France";
+           
+        });
+        //console.log(arr);
+        showPeople(arr);
+    }
+
+    function styleByCountry(data = peoplesData) {
+    // Always apply style to the current data passed — not to old content
+    const arr1 = data.map(function(ele){
+        let color = (ele.country === "India") ? "blue" :
+                    (ele.country === "USA") ? "green" :
+                    (ele.country === "France") ? "red" : "black";
+
+        return `<tr style='color:${color}'>
+                    <td class="td1">${ele.name}</td>
+                    <td class="td1">${ele.country}</td>
+                    <td class="td1">${ele.age}</td>
+                </tr>`;
+    });
+
+    const header = `<tr>
+        <th class="th1">Name</th>
+        <th class="th1">Country</th>
+        <th class="th1">Age</th>
+    </tr>`;
+
+    document.getElementById("peopleList").innerHTML = `<table class="table1">${header}${arr1.join("")}</table>`;
+}
+
+        
+    
+    function styleByAge(data = peoplesData) {
+    const arr1 = data.map(function(ele) {
+        let color = "black";
+
+        if (ele.age <= 30) {
+            color = "green";
+        } else if (ele.age <= 40) {
+            color = "blue";
+        } 
+        else {
+            color = "red";
+        }
+
+        return `<tr style="color:${color}">
+                    <td class="td1">${ele.name}</td>
+                    <td class="td1">${ele.country}</td>
+                    <td class="td1">${ele.age}</td>
+                </tr>`;
+    });
+
+    const header = `<tr>
+        <th class="th1">Name</th>
+        <th class="th1">Country</th>
+        <th class="th1">Age</th>
+    </tr>`;
+
+    document.getElementById("peopleList").innerHTML = `<table class="table1">${header}${arr1.join("")}</table>`;
+}
+
+
+    </script>
+</body>
+</html>

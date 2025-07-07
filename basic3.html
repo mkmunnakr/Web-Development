@@ -2,52 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS-A3#1a(task 1.6)</title>
-    <style>
-        .container  {
-            background-color: rgb(47, 255, 82);
-            width :40%;
-            height: 120px;
-            padding-top: 10px ;
-            padding-left: 5px;
-            border:1px solid black;
-            margin-left: 0;
-            display:inline-block;
-            
-        }
-       
-        .container2 {
-            background-color: palevioletred;
-            width :40%;
-            height: 120px;
-            padding-top: 10px ;
-            padding-left: 5px;
-            border:1px solid black;
-            margin-left: 0;
-            display:inline-block;
-            
-        }
-    </style>
+    <meta name="viewpor" content="width=device-width, initial-scale=1.0"> 
+    <title>Exercise 1</title>
 </head>
 <body>
-    <h2>Welcome to the Quiz Show</h2>
     
-    <div class="container">
-        <p>Dave Burton</p>
-        <p>5</p>
-        <button>+5</button>
-        <button>+2</button>
-        <button>-1</button>
-    </div>
-    
-        <div class="container2">
-            <p>Mary Stevens</p>
-            <p>0</p>
-            <button>+5</button>
-            <button>+2</button>
-            <button>-1</button>
-        </div>
-    
+    <!-- Show the name, email and mobile of the person whose button was clicked -->
+    <h2>Persons Data</h2>
+    <div id="data"></div>
+    <button onclick="show(0)">Jack</button>
+    <button onclick="show(1)">Bob</button>
+    <button onclick="show(2)">Mary</button>
+    <button onclick="clearData()">Clear</button>
+    <script>
+        let persons = [
+        {name:'Jack',email:'jack@email.com',mobile:'3094892'},
+        {name:'Bob',email:'bob@email.com',mobile:'2344892'},
+        {name:'Mary',email:'mary@email.com',mobile:'8754892'}
+        ];
+        function show(index)
+        {
+            let person = persons[index];
+            let element = document.getElementById("data");
+            let str = "<h3>"+person.name+"<h3>";
+            str += "<h3>"+person.email+"<h3>";
+            str += "<h3>"+person.mobile+"<h3>";
+            console.log(str);
+            element.innerHTML = str;
+        }
+        function clearData(){
+            let element = document.getElementById('data');
+            element.innerHTML = '';
+        }    
+    </script>
+        
 </body>
-</html>
+ </html>

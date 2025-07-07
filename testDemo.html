@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="domManipulation1.css">
+    <title>JS-A3#1b(Tasks 2)</title>
+</head>
+<body>
+
+   
+    <h2>List of People</h2>
+    <ul id="peopleList"></ul>
+    <button onclick="showPeople()">Show</button>
+   
+    <script>
+
+    
+    function showPeople(data = peoplesData) {
+        const listElement = document.getElementById("peopleList");
+        listElement.innerHTML = "";
+
+        for(let i=0;i<peoplesData.length;i++){
+            let person = data[i];
+            const li = document.createElement("li");
+            li.textContent = `${person.name}, ${person.country}, ${person.age}`;
+             /* if(person.country == 'India') 
+              {
+                li.className = 'india';
+              }
+            else if(person.country == 'USA')
+              {
+                li.className = 'USA';
+              }
+            else if(person.country == "France")
+               {
+                li.className = 'france';
+               } */
+           let list = listElement.appendChild(li);
+           //console.log("list");
+        }
+    }
+    function hidePeople() {
+        const listElement = document.getElementById("peopleList");
+        listElement.innerHTML = "";
+    }
+    function sortByName() {
+        peoplesData.sort(function(p1,p2){
+            return p1.name.localeCompare(p2.name);
+        });
+        showPeople();
+    }
+    function sortByCountry() {
+        peoplesData.sort(function(p1,p2){
+            return p1.country.localeCompare(p2.country);
+        });
+        showPeople();
+    }
+    function sortByAge(){
+        peoplesData.sort(function(age1,age2){
+            return age1.age - age2.age;
+        });
+        showPeople();
+    }
+    function sortByNameAndCountry() {
+        peoplesData.sort(function(p1,p2){
+            let countryCompare = p1.country.localeCompare(p2.country);
+            if(countryCompare !== 0)
+            return countryCompare;
+            return p1.name.localeCompare(p2.name);
+        });
+        showPeople();
+    }
+    function sortByCountryAndAge() {
+        peoplesData.sort(function(p1,p2){
+            let countryCompare = p1.country.localeCompare(p2.country);
+            if(countryCompare !== 0)
+            return countryCompare;
+            return p1.age - p2.age;
+        });
+        showPeople();
+    }
+    function filterIndia() {
+        let arr = peoplesData.filter(function(count){
+        return count.country == "India";
+           
+        });
+        //console.log(arr);
+        showPeople(arr);
+    }
+    function filterUSA() {
+        let arr = peoplesData.filter(function(count){
+        return count.country == "USA";
+           
+        });
+        //console.log(arr);
+        showPeople(arr);
+    }
+    function filterFrance() {
+        let arr = peoplesData.filter(function(count){
+        return count.country == "France";
+           
+        });
+        //console.log(arr);
+        showPeople(arr);
+    }
+    </script>
+</body>
+</html>
