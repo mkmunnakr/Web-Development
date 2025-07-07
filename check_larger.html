@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 3</title>
+</head>
+<body>
+    <script>
+        function larger(num1,num2)
+        {
+            console.log("Parameters are ",num1,num2)
+            let largeNum = '';
+            if(num1 >= num2)
+            {
+                largeNum = num1;
+            }
+            else 
+            {
+                largeNum = num2;
+            }
+
+            return largeNum;
+        }
+        let n1 = 19;
+        let n2 = 18;
+        let largeNumber = larger(n1,n2);
+        console.log(largeNumber);
+    </script>
+</body>
+</html>

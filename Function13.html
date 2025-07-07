@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-A1#6 (Tasks 13)</title>
+</head>
+<body>
+    <script>
+        let str="javascccript";
+        let maxCount=0;
+        let maxChar="";
+
+        for(let i=0;i<str.length;i++)
+        {
+            let currentChar=str[i];
+            let count=0;
+
+            let alreadyCounted=false;
+
+            for(let j=0;j<i;j++)
+            {
+                if(str[j]===currentChar)
+                {
+                    alreadyCounted=true;
+                    break;
+                }
+            }
+            if(alreadyCounted)  continue;
+
+            for(let j=0;j<str.length;j++)
+            {
+                if(str[j]===currentChar)
+                    count++;
+            }
+
+            if(count>maxCount)
+            {
+                maxCount=count;
+                maxChar=currentChar;
+            }
+        }
+        console.log(maxChar,maxCount);
+    </script>
+</body>
+</html>

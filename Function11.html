@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-A1#6 (Tasks 11)</title>
+</head>
+<body>
+    <script>function isPrime(num)
+        {
+            let primeVal=true;
+            if(num<=1)
+            {
+                primeVal= false;
+            }
+            //let c = Math.sqrt(num);
+            let c=Math.floor(num/2)
+            for(let i = 2; i<=c; i++)
+            {
+                if((num % i) == 0)
+                {
+                    primeVal=false;
+                    break;
+                }
+                
+            }
+            return primeVal
+        }
+        
+        function CheckisPrime(num)
+        {
+            let prime = 0;
+           
+            for(let i =1; i<=num; i++)
+            {
+                var primeFlag=isPrime(i)
+                if(primeFlag==true)
+                    prime=prime+1
+               console.log(i,num,prime)
+            }
+            console.log(prime);
+        }
+        CheckisPrime(5);
+    </script>
+</body>
+</html>

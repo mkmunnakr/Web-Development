@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-A1#6 (Tasks 7)</title>
+</head>
+<body>
+    <script>
+        function CheckString(str,char1,char2)
+        {
+            let len = str.length;
+            let count1 = 0;
+            let count2 = 0;
+            for(let i = 0; i<= len ;i++)
+            {
+                if(str[i] == char1)
+                {
+                    count1++;
+                }
+                else if(str[i]== char2)
+                {
+                    count2++;
+                }
+            }
+            if(count1 == count2)
+            {
+                console.log(0);
+            }
+            else if(count1 > count2)
+            {
+                console.log(1);
+            }
+            else
+            {
+                console.log(-1);
+            }
+        }
+        CheckString("moozoom","m","o");
+        CheckString("abcaabca","b","c");
+    </script>
+</body>
+</html>

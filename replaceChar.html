@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 6</title>
+</head>
+<body>
+    <script>
+        function replaceChar(str,char1,char2)
+        {
+            let outstr = '';
+            let len =str.length;
+            for(let i=0; i<len ;i++)
+            {
+                if(str[i] == char1)
+                {
+                    outstr = outstr + char2;
+                }
+                else 
+                {
+                    outstr = outstr + str[i];
+                }
+                
+            }
+            return outstr;
+            
+            
+        }
+        console.log(replaceChar('Good','o','u'));
+    </script>
+</body>
+</html>

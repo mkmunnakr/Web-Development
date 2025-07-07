@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 5</title>
+</head>
+<body>
+    <script>
+        function largestOf3(n1,n2,n3){
+            let largest ;
+            if(n1 >= n2 && n1 >= n3)
+            {
+                largest = n1;
+            }
+            else if(n2 >= n1 && n2 >= n3)
+            {
+                largest = n2;
+            }
+            else 
+            {
+                largest = n3;
+            }
+            return largest;
+        }
+        console.log(largestOf3(7,9,4));
+    </script>
+</body>
+</html>

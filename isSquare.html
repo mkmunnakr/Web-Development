@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 7</title>
+</head>
+<body>
+    <script>
+        function isSquare(num)
+        {
+            for(let i=1; i<=num; i++)
+            {
+                console.log("Checking for ",i);
+                let sq = i*i;
+
+                if(sq == num)
+                {
+                    console.log("Got a Match");
+                    return true;
+                }
+                
+            }
+            console.log("Not Match Found");
+            return false;
+        }
+        console.log(isSquare(15));
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 9</title>
+</head>
+<body>
+    <p>Factorial 1 to n.</p>
+    <script>
+        function factorial(n)
+        {
+            let out = 1;
+            for(let i=1; i<=n; i++)
+            {
+                out = out * i;
+            }
+            return out;
+        }
+        function printFactorial(num)
+        {
+            for(let i=1; i<=num; i++)
+            {
+                let fact = factorial(i);
+                
+                console.log('Factorial of ',i,' is ',fact);
+            }
+        }
+        printFactorial(5);
+    </script>
+</body>
+</html>

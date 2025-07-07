@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-A1#6 (Tasks 4)</title>
+</head>
+<body>
+    <script>
+        function ThreeNumber(n1,n2,n3)
+        {
+            let largest ;
+            let lowest1 ;
+            let lowest2;
+            if(n1 >= n2 && n1 >= n3)
+            {
+                largest = n1;
+                lowest1 = n2;
+                lowest2 = n3 ;
+
+            }
+            else if(n2 >= n1 && n2 >= n3)
+            {
+                largest = n2;
+                lowest1 = n1;
+                lowest2 = n3 ;
+            }
+            else 
+            {
+                largest = n3;
+                lowest1 = n2;
+                lowest2 = n1 ;
+            }
+           // return [largest,lowest2,lowest1];
+         let square = (largest * largest);
+         let square1 = (lowest1 * lowest1) + (lowest2 * lowest2)
+
+         if(square == square1)
+         {
+            console.log("True");
+
+         }
+         else
+         {
+            console.log("False");
+         }        
+
+            
+        }
+
+        ThreeNumber(6,10,8);
+    </script>
+</body>
+</html>

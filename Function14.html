@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-A1#6 (Tasks 14)</title>
+</head>
+<body>
+    <script>
+        function sumOfDigit(num,n)  //n is number of digit
+        {
+            let len = num.length;
+            let sum = 0;
+            for(let i=1; i<=n ;i++)
+            {
+                let a = num%10;
+                num = Math.floor(num/10);
+                sum = sum + a;
+            }
+            return sum;
+        }
+        //let result = sumOfDigit(24681,5);
+        let result = sumOfDigit(789,3)
+        console.log(result);
+    </script>
+</body>
+</html>

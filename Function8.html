@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-A1#6 (Tasks 8)</title>
+</head>
+<body>
+    <script>
+        function CheckString(str)
+        {
+            let len = str.length;
+            let count = 0;
+            let count1 = 0;
+            for(let i=0; i<len; i++)
+            {
+                if(str[i] == '(')
+                {
+                    count++;
+                }
+                else if(str[i] == ')')
+                {
+                    count1++;
+                }
+            }
+
+            if(count == count++)
+            {
+                console.log("True");
+
+            }
+            else
+            {
+                console.log("False");
+            }
+        }
+        CheckString("(a+b+(c+d*e)-(d+e*f))+3");
+    </script>
+</body>
+</html>
