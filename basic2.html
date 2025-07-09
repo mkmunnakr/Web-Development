@@ -3,23 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practice 2(innerHTML)</title>
+    <title>Practice 2</title>
 </head>
 <body>
-    <h2>Sales Data</h2>
-    <h3 id="name1">Seller : Jack Smith</h3>
-    <h3 id="sale1">Total Sale : 
-        <span id="qty">12</span>
-    </h3>
-    <button onclick="addSale(1)">Add 1 to Sale</button>
-    <button onclick="addSale(2)">Add 2 to Sale</button>
     <script>
-        function addSale(amt) {
-            let ele = document.getElementById('qty');
-            let quantity = +ele.innerHTML;
-            console.log(quantity);
-            ele.innerHTML = quantity + amt;
-        }
+        let student1 = {
+        name : 'jack',
+        age : 25,
+        module : 'Javascript',
+        chapter : ['For','String'],
+        completed : false
+       } 
+       let student2 = {
+        name : 'Bob',
+        age : 23,
+        module : 'Javascript',
+        chapter : ['For'],
+        completed : false
+       } 
+       let student3 = {
+        name : 'Tom',
+        age : 27,
+        module : 'Javascript',
+        chapter : ['For','String','Functions'],
+        completed : true
+       } 
+      // console.log(student3);
+       const stArray = [student1,student2,student3];
+      // console.log(stArray);
+       let prof = { 
+         name : 'steve',
+         email : 'steve@gmail.com'
+       }
+       let jsCourse = {
+        faculty : prof,
+        student : stArray,
+        startDate : '21-Jun',
+        nextClass : '8-jul'
+       }
+       console.log(jsCourse);
+       console.log(jsCourse.faculty);
+       console.log(jsCourse.students);
+       
     </script>
 </body>
 </html>

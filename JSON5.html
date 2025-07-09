@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-A2#2 (Tasks 5)</title>
+</head>
+<body>
+    <p>Define an emptyJSON and then add the following to it <br>
+        id: EMP1223 , email : emp1223@email.com , company : EMP Inc. <br>
+        Display the details of the JSON</p>
+    <script>
+        let arr = [];
+        let emptyJSON = {
+            employee : arr
+        }
+
+        let empDetail = {
+            id : 'EMP1223',
+            email : 'emp1223@email.com' ,
+            company : 'EMP Inc'
+        }
+        emptyJSON.employee.push(empDetail);
+        console.log(emptyJSON);
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Details (Exercise 3) Practice 6</title>
+</head>
+<body>
+    <script>
+         employee1 = {
+            name : 'Sam',
+            dept : 'Tech',
+            designation : 'Manager',
+            salary : 40000 ,
+            raise : true 
+        }
+        employee2 = {
+            name : 'Mary',
+            dept : 'Finance',
+            designation : 'Trainee',
+            salary : 18500 ,
+            raise : true 
+        }
+        employee3 = {
+            name : 'Bell',
+            dept : 'HR',
+            designation : 'Executive',
+            salary : 21200 ,
+            raise : false
+        }
+
+        const arrEmployee = [employee1,employee2,employee3];
+        let company = {
+            companyname : 'Tech Stars',
+            website : 'www.techstars.site',
+            employees : arrEmployee 
+        }
+        
+        
+         employee4 = {
+            name : 'Anna',
+            dept : 'Tech',
+            designation : 'Executive',
+            salary :'25600' ,
+            raise : false
+        }
+        company.employees.push(employee4);
+        console.log(company);
+    </script>
+</body>
+</html>

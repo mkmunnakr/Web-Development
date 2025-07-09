@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-A2#2 (Tasks 4)</title>
+</head>
+<body>
+    <p>
+        Define 2 JSONs as {"billid":401, "amount":200} and {"billid":402, "amount":500}<br>
+        Use the JSONs to  calculate and display the sum of the amount of the bills.
+    </p>
+   <script>
+     let object1 = {
+        billid : 401,
+        amount : 200
+    }
+
+    let object2 = {
+        billid : 402,
+        amount : 500
+    }
+    const arrShop = [object1,object2];
+    let shops = {
+        object : arrShop
+    }
+
+    function sumAmount(objJSON)
+    {
+        let arrObj = objJSON.object;
+        let total = 0;
+        for(let i=0;i<arrObj.length;i++)
+        {
+            let obj = arrObj[i];
+            total = total + obj.amount;
+        }
+        return total;
+    }
+    let totalAmount = sumAmount(shops);
+    console.log(shops);
+    console.log("total amount is ",totalAmount);
+
+   </script>
+</body>
+</html>
