@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-A1#4 (Tasks 17)</title>
+</head>
+<body>
+    <script>
+        let n = 7;
+        let str = '';
+        let result = '';
+        for(let i=1; i<=n; i++)
+        {
+            if(i%2!=0)
+            {
+                str += (-i) ;
+                result = result - i;
+            }
+            else
+            {
+                str +=  "+"+ i;
+                result = result + i;
+            }
+
+        }
+        <!-- console.log(result); -->
+        let output = str + '=' + result;
+        console.log(output);
+    </script>
+</body>
+</html>
