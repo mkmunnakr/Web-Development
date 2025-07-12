@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2</title>
+</head>
+<body>
+    <script>
+        const nums = [4,6,24,26,2,9,96,56,95];
+        //find max value
+        let max =nums.reduce(function(acc,curr){
+            if(curr>acc)
+                return curr;
+            else
+                return acc;
+        },0);
+        console.log("max Value is ",max);
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absolute value </title>
+</head>
+<body>
+    <h1>
+        Map Exercise 2
+    </h1>
+    <p>
+        Absolute value n >= 0 then it is n <br>
+        else  it is -1 * n 
+    </p>
+    <script>
+        const nums = [5,7,-8,24,-25,9,8,45];
+        const arr = nums.map(function(element){
+            if(element >=0)
+            return element;
+
+            else
+            return -1*element;
+        });
+        console.log(arr);
+    </script>
+</body>
+</html>
