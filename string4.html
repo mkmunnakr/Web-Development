@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-A1#5 (Tasks 4)</title>
+</head>
+<body>
+        <script>
+        let str = "xy+x+y+xx+y+5x+4x=5";
+        let len = str.length;
+        let count = 0;
+        let co = 0;
+        for(let i=0; i<=len; i++)
+        {
+            if(str[i]=='x')
+            {
+                count++;
+            }
+            else if(str[i]=='y')
+            {
+                co++;
+            }
+        }
+        console.log("x = ",count);
+        console.log("y = ",co);
+    </script>
+</body>
+</html>

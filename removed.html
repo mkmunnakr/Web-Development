@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript String practice 9</title>
+</head>
+<body>
+    <p>Given a string create a new string where multiple # have been removed</p>
+    <script>
+        let str = 'a###b#c##n##';
+        let out = '';
+        let len = str.length;
+
+        for(let i=0; i<len; i++)
+        {
+            let ch = str[i];
+            let prev_ch = str[i-1];
+            if(ch == '#')
+            {
+                if(prev_ch == '#')
+                {
+                    <!-- do nothing -->
+                }
+                else
+                {
+                    out = out + ch;
+                }
+            }
+            else 
+            {
+                out = out + ch;
+            }
+        }
+        console.log(out);
+    </script>
+</body>
+</html>

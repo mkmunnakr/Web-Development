@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-A1#5 (Tasks 13)</title>
+</head>
+<body>
+    <script>
+        let str = 'nmnuN6k**#j23A';
+        let newStr = '';
+        let len = str.length;
+        let start = '';
+        let mid = '';
+        let last = '';
+        for(let i=0; i<len; i++)
+        {
+            let ch = str[i];
+            
+            
+            if(ch >='a' && ch <= 'z')
+            {
+                start = start + str[i];
+            }
+            else if(ch >= '0' && ch <= '9')
+            {
+                mid = mid + str[i];
+            }
+            else if(ch >= 'A' && ch <= 'Z')
+            {
+               last = last + str[i];
+            }
+            else
+            {
+                // do nothing
+            }
+        }
+         newStr = start + mid + last;
+        console.log(newStr);
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript String practice 11</title>
+</head>
+<body>
+    <script>
+        let str = 'I am learning Javascript';
+        let space = '';
+        let len = str.length;
+        let startPos = 0;
+        while(1){
+            let index = str.indexOf(space,startPos);
+            if(index >= 0)
+            {
+                let word = str.substring(startPos,index);
+                console.log(word);
+                startPos = index +1;
+            }
+            else 
+            {
+                let word = str.substring(startPos);
+                console.log(word);
+                break;
+            }
+        }
+    </script>
+    
+</body>
+</html>

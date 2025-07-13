@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-A1#5 (Tasks 11)</title>
+</head>
+<body>
+    <script>
+        let str = "MuNNa420**Abc";
+        let len = str.length;
+        let output = '';
+        for(let i =0; i<len; i++)
+        {
+            ch = str[i];
+            if(ch >= 'A' && ch <= 'Z')
+            {
+                output = output + "A";
+            }
+            else if(ch >='a' && ch <= 'z')
+            {
+                output = output + "a";
+            }
+            else if(ch >= '0' && ch <= '9')
+            {
+                output = output + "0";
+            }
+            else 
+            {
+                output = output + str[i];
+            }
+        }
+        console.log(output);
+    </script>
+</body>
+</html>

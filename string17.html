@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-A1#5 (Tasks 17)</title>
+</head>
+<body>
+    <script>
+        let str = 'rajkumaqk';
+        let len = str.length;
+        let newstr = '';
+        let start = '';
+        let mid = '';
+        let end = '';
+        let last = Math.floor(len/2);
+        for(let i=0; i<len; i++)
+        {
+            if(len%2==1 && i== last)
+            {
+                // middle char for odd length
+                mid = str[i];
+            }
+            else if(i < last)
+            {
+                start += str[i];
+            }
+            else 
+            {
+                end += str[i];
+            }
+        }
+        
+        console.log(end + mid + start);
+    </script>
+        
+
+       
+    </body>
+</html>

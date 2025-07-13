@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-A1#5 (Tasks 14)</title>
+</head>
+<body>
+    <script>
+        let str = 'mu##**@kuma&*RNA';
+        let newstr = '';
+        let len = str.length;
+        for(let i=0; i<len; i++)
+        {
+            let ch = str[i];
+            
+            
+            if(ch >='a' && ch <= 'z')
+            {
+                // do nothing
+            }
+            else if(ch >= '0' && ch <= '9')
+            {
+                // do nothing
+            }
+            else if(ch >= 'A' && ch <= 'Z')
+            {
+               // do nothing
+            }
+            else
+            {
+                newstr = newstr + str[i];
+            }
+        }
+        console.log(newstr);
+
+    </script>
+</body>
+</html>

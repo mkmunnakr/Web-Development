@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript String practice 10</title>
+</head>
+<body>
+    <script>
+        let str1 = 'YesNoYesOkYes';
+        let str2 = 'Yes';
+        let count = 0;
+        let startPos = 0;
+        while(1){
+            let index = str1.indexOf(str2,startPos);
+            if(index >=0)
+            {
+                count++; 
+                startPos = index +1;
+
+            }
+            else 
+            {
+                break;
+            }
+        }
+        console.log(count);
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript String practice 8</title>
+</head>
+<body>
+    <p>Given a string create 3 strings with the alphabets, digits ,and Other character</p>
+    <p>test cases</p>
+    <p>Ab#6!8m ------ > Ab m#! 68</p>
+    <script>
+        let str = "Ab#6!8m";
+        let len = str.length;
+        let alpha = '';
+        let digit = '';
+        let other = '';
+        for(let i=0; i<len; i++)
+        {
+            let ch = str[i];
+
+            if(ch >= 'a' && ch <= 'z'|| ch >= 'A' && ch <= 'Z')
+            {
+                alpha = alpha + str[i];
+            }
+            else if(ch >= '0' && ch <= '9')
+            {
+                digit = digit + str[i];
+            }
+            else
+            {
+                other = other + str[i];
+            }
+        }
+        console.log(alpha + other + digit);
+    </script>
+</body>
+</html>
