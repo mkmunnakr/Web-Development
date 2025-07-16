@@ -3,30 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practice 1</title>
+    <title>Practice 1(get_element_by_id)</title>
 </head>
 <body>
+    <h2>Sales Data</h2>
+    <h3 id="name1">Seller : Jack Smith</h3>
+    <h3 id="sale1">Total Sale : 
+        <span id="qty">12</span>
+    </h3>
+    <button>Add 1 to Sale</button>
+    <button>Add 2 to Sale</button>
     <script>
-       let student1 = {
-        name : 'jack',
-        age : 25,
-        module : 'Javascript',
-        chapter : ['For','String'],
-        completed : false
-       } 
-       //console.log(student1);
-       //console.log(student1['name']);  // only name is given
-       //console.log(student1['age']);  //only age is given
-       //console.log(student1['chapter']);
-       student1['name'] = 'Jack Smith';  // chane the name and print the new name 
-     //console.log(student1['name']);
-     student1['age'] = 29;  //modify 
-    
-       let chaps = student1.chapter;
-       chaps.push('Function');
-        console.log(student1);
-     let var1 = 'age';
-     console.log(student1[var1]);
+        let nameEle = document.getElementById('name1');
+        console.log(nameEle);
+        let saleEle = document.getElementById('sale1');
+        console.log(saleEle);
+        let qtyEle = document.getElementById('qty');
+        console.log(qtyEle);
     </script>
 </body>
 </html>

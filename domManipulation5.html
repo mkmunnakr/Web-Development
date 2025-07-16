@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title> 
+    <title>JS-A3#1b(Tasks 5)</title> 
     <link rel="stylesheet" href="domManipulation5.css">
 </head>
 <body>
@@ -65,7 +65,11 @@
                 header+= '</tr>';
             let html = '<h2>Details of Likes</h2>';
             if(feedback.length==0)
-                html+= '<h3>No Feedback has been received</h3>'
+                {
+                    html+= '<h3>No Feedback </h3>'
+                    return html;
+                }
+
             else{
                 let countLikes = feedback.reduce(function(acc,curr){
                     return acc+curr.likes
