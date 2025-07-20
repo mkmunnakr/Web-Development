@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart List</title>
+    <link rel="stylesheet" href="./tableLikeDislike.css">
+</head>
+<body>
+    <div id="showDetails"></div>
+    <script>
+        let products = [
+        {prod:'Pepsi',price:15,stock:20},
+        {prod:'Coke',price:18,stock:30},
+        {prod:'Maggi',price:10,stock:35},
+        {prod:'Nescafe',price:40,stock:10},
+        {prod:'Dairy Milk',price:30,stock:12},
+        {prod:'Frito Lays',price:20,stock:15}
+        ] ;
+        let feedback = [];
+        show();
+        function show(){
+            let s1 = showProducts();
+            let s2 = showFeedback();
+            let element = document.getElementById('showDetails');
+            element.innerHTML = s1 + s2;
+        }
+        function showProducts(){
+            let pMap = products.map(function(ele){
+                str = '<tr>';
+                str+= '<td class="col1">'+ele.prod+'</td>';
+                str+= '<td class="col1">'+ele.price+'</td>';
+                str+= '<td class="col1">'+ele.stock+'</td>';
+                str+= '<td class="col1"><button class="cart" onclick="cart(\''+ele.prod+'\')">Add To Cart</button></td>';
+                str+= '</tr>';
+                return str;
+            });
+            let header = '<tr>';
+                header+= '<th class="th1">Product</th>';
+                header+= '<th class="th1">Price</th>';
+                header+= '<th class="th1">Stock</th>';
+                header+= '<th class="th1"></th>';
+                header+= '</tr>';
+            let html = '<h2>List of Product</h2>';
+             html+= "<table class=\"table1\">"+header+pMap.join("")+"</table>"; 
+             return html;
+        }
+        function showFeedback(){
+            let fMap = feedback.map(function(ele){
+                str = '<tr>';
+                str+= '<td class="col1">'+ele.prod+'</td>';
+                str+= '<td class="col1">'+ele.quantities+'</td>';
+                str+= '<td class="col1">'+ele.price+'</td>';
+                str+= '<td class="col1">'+ele.quantities*ele.price+'</td>';
+                
+                str += '<td class="col1"><button class="remove" onclick="remove(\'' + ele.prod + '\')">Remove</button></td>';
+                
+                str+= '</tr>';
+                return str;
+            });
+            let header = '<tr>';
+                header+= '<th class="th1">Product</th>';
+                header+= '<th class="th1">Quantity</th>';
+                header+= '<th class="th1">price</th>';
+                header+= '<th class="th1">Amount</th>';
+                header+= '<th class="th1"></th>';
+                //header+= '<th class="th1"></th>';
+                header+= '</tr>';
+            let html = '<h2>My Cart</h2>';
+            if(feedback.length==0)
+                {
+                    html+= '<h3>Cart is Empty</h3>'
+                    return html;
+                }
+            else{
+                let countQuantity = feedback.reduce(function(acc,curr){
+                    return acc+curr.quantities
+                },0);
+                let countAmount = feedback.reduce(function(acc,curr){
+                    return acc+(curr.quantities*curr.price)
+                },0);
+                html+='<h3>Number of Items : '+countQuantity+' Bill Amount :'+countAmount+'</h3>'
+                html+= "<table class=\"table1\">"+header+fMap.join("")+"</table>"; 
+            return html;
+            }
+             
+        }
+
+        function cart(prod){
+            let c1 = feedback.find(function(ele){
+                return ele.prod == prod;
+            });
+            if(c1)
+            {
+                c1.quantities++;
+            }
+            else 
+            {
+                let prod1 = products.find(function(ele){
+                    return ele.prod == prod;
+                }) ;
+                let item = {prod:prod1.prod,price:prod1.price,quantities :1,amounts:1};
+                feedback.push(item);
+            }
+            console.log(feedback);
+            show();
+        }
+         function remove(prod) {
+            let index = feedback.findIndex(function(ele){
+                return ele.prod == prod;
+            });
+            if(index>=0)
+            feedback.splice(index,1);
+            show();
+        }
+
+    </script>
+</body>
+</html>
