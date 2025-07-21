@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-A3#2 (Tasks 4.1)</title>
+    <link rel="stylesheet" href="weightAdd.css">
+</head>
+<body>
+    <div id="filter"></div>
+    <div id="weigth"></div>
+    <script>
+        let persons = [
+        {name:"Jack",oldAge:65,newAge:68},
+        {name:"Mary",oldAge:55,newAge:53},
+        {name:"Bob",oldAge:71,newAge:66},
+        {name:"Steve",oldAge:62,newAge:68},
+        {name:"James",oldAge:81,newAge:77},
+        {name:"Julia",oldAge:52,newAge:52},
+        {name:"Miccheal",oldAge:68,newAge:68},
+        {name:"Bill",oldAge:60,newAge:61},
+        {name:"Sonny",oldAge:61,newAge:60},
+        ]
+
+        let str = 'New Weight between:<input type="text" id="minwet" placeholder="Enter min wt">'
+            str+= '<input type="text" id="maxwet" placeholder="Enter max wt"><br/>'
+            str+= '<button onclick=\'addfilter()\'>Filter</button>'
+            let div = document.getElementById('filter')
+            div.innerHTML = str;
+
+        function addfilter() {
+            let min = parseInt(document.getElementById('minwet').value);
+            let max = parseInt(document.getElementById('maxwet').value);
+
+            let filtered = persons.filter(function(ele){
+                return ele.newAge >= min && ele.newAge <= max
+            });
+            let pMap = filtered.map(function(ele){
+                if (ele.newAge > ele.oldAge)
+                  {
+                    let str = "<tr>"
+                    str+= '<td class=\'td1\'>'+ele.name+'</td>'
+                    str+= '<td class=\'td1\'>'+ele.oldAge+'</td>'
+                    str+= '<td class=\'td1\'>'+ele.newAge+'</td>'
+                    str+= "</tr>"
+                    return str;
+                 }
+
+                else if (ele.newAge < ele.oldAge)
+                  {
+                    let str = "<tr>"
+                    str+= '<td class=\'td2\'>'+ele.name+'</td>'
+                    str+= '<td class=\'td2\'>'+ele.oldAge+'</td>'
+                    str+= '<td class=\'td2\'>'+ele.newAge+'</td>'
+                    str+= "</tr>"
+                    return str;
+                 }
+                else
+                  {
+                    let str = "<tr>"
+                    str+= '<td class=\'td3\'>'+ele.name+'</td>'
+                    str+= '<td class=\'td3\'>'+ele.oldAge+'</td>'
+                    str+= '<td class=\'td3\'>'+ele.newAge+'</td>'
+                    str+= "</tr>"
+                    return str;
+                 }
+            })
+            let header = "<tr>";
+            header+= "<th class=\"th1\" onclick=\'sort(0)\'>Name</th>";
+            header+= "<th class=\"th1\" onclick=\'sort(1)\'>Old Age</th>";
+            header+= "<th class=\"th1\" onclick=\'sort(2)\'>New Age</th>";   
+            header+= "</tr>";
+            let html = "<table class=\"table1\">"+header+pMap.join("")+"</table>"; 
+            console.log(html);
+            let element = document.getElementById('weigth')
+            element.innerHTML = html
+        
+       // showPerson();
+        }
+        function showPerson() {
+            let pMap = persons.map(function(ele){
+                if (ele.newAge > ele.oldAge)
+                  {
+                    let str = "<tr>"
+                    str+= '<td class=\'td1\'>'+ele.name+'</td>'
+                    str+= '<td class=\'td1\'>'+ele.oldAge+'</td>'
+                    str+= '<td class=\'td1\'>'+ele.newAge+'</td>'
+                    str+= "</tr>"
+                    return str;
+                 }
+
+                else if (ele.newAge < ele.oldAge)
+                  {
+                    let str = "<tr>"
+                    str+= '<td class=\'td2\'>'+ele.name+'</td>'
+                    str+= '<td class=\'td2\'>'+ele.oldAge+'</td>'
+                    str+= '<td class=\'td2\'>'+ele.newAge+'</td>'
+                    str+= "</tr>"
+                    return str;
+                 }
+                else
+                  {
+                    let str = "<tr>"
+                    str+= '<td class=\'td3\'>'+ele.name+'</td>'
+                    str+= '<td class=\'td3\'>'+ele.oldAge+'</td>'
+                    str+= '<td class=\'td3\'>'+ele.newAge+'</td>'
+                    str+= "</tr>"
+                    return str;
+                 }
+            })
+            let header = "<tr>";
+            header+= "<th class=\"th1\" onclick=\'sort(0)\'>Name</th>";
+            header+= "<th class=\"th1\" onclick=\'sort(1)\'>Old Age</th>";
+            header+= "<th class=\"th1\" onclick=\'sort(2)\'>New Age</th>";   
+            header+= "</tr>";
+            let html = "<table class=\"table1\">"+header+pMap.join("")+"</table>"; 
+            console.log(html);
+            let element = document.getElementById('weigth')
+            element.innerHTML = html
+        }
+        showPerson();
+        function sort(colno){
+            if(colno == 0){
+              persons.sort(sortName);
+            }
+            else if(colno == 1){
+              persons.sort(sortOldAge);
+            }
+            else {
+              persons.sort(sortNewAge);
+            }
+            showPerson()
+        } 
+        function sortName(p1,p2){
+            return -1 * (p1.name.localeCompare(p2.name))
+        }
+        function sortOldAge(p1,p2){
+            return p2.oldAge - p1.oldAge
+        }
+        function sortNewAge(p1,p2){
+            return p2.newAge - p1.newAge
+        }
+
+    </script>
+</body>
+</html>

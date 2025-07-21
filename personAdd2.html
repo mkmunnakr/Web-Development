@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Person</title>
+    <link rel="stylesheet" href="personAdd.css">
+</head>
+<body>
+    <div id="details"></div><br>
+    <div id="persons"></div>
+    <script>
+        let persons = [
+        {name:'Jack',age:28,city:'London',tech:'Android'},
+        {name:'Mary',age:32,city:'Paris',tech:'React'},
+        {name:'Bob',age:35,city:'New York',tech:'Angular'},
+        {name:'Steve',age:26,city:'Delhi',tech:'Spring'},
+        ]
+
+        let str = 'Name:<input type="text" id="name"><br/>'
+            str+= 'Age:<input type="text" id="age"><br/>'
+            str += 'City:<select id="city">'
+            str += '<option value="Select">Select City</option>'
+            str += '<option value="London">London</option>'
+            str += '<option value="Paris">Paris</option>'
+            str += '<option value="New York">New York</option>'
+            str += '<option value="Delhi">Delhi</option>'
+            str += '</select><br/>'
+
+            str += 'Technology:<select id="tech">'
+            str += '<option value="Tech">Select Tech</option>'
+            str += '<option value="Android">Android</option>'
+            str += '<option value="React">React</option>'
+            str += '<option value="Angular">Angular</option>'
+            str += '<option value="Spring">Spring</option>'
+            str += '<option value="Javascript">Javascript</option>'
+            str += '</select><br/>'
+            str+= '<button onclick=\'addPerson()\'>Add Person</button>'
+            str+= '<button onclick=\'removePerson()\'>Remove Person</button>'
+            let div = document.getElementById('details')
+            div.innerHTML = str;
+
+    function addPerson(){
+        let name = document.getElementById('name').value
+        let age = document.getElementById('age').value
+        let city = document.getElementById('city').value
+        let tech = document.getElementById('tech').value
+
+        let exists = persons.some(function(ele){
+            return ele.name.toLowerCase() === name.toLowerCase()
+        })
+
+    if(exists){
+        alert("Name already exists")
+    } else {
+        let p = {name, age, city, tech}
+        persons.push(p)
+        showPerson()
+    }
+}
+
+        function removePerson(){
+            let inputName = document.getElementById('name').value
+            let index = persons.findIndex(function(ele){
+                return ele.name == inputName;
+            });
+            if(index>=0){
+                persons.splice(index,1)
+                showPerson()
+            } else {
+                alert("'"+ inputName+"' not found.")
+            }
+        }
+            showPerson()
+            function showPerson(){
+                let pMap = persons.map(function(ele){
+                    let str = "<tr>"
+                        str+= '<td class=\'td1\'>'+ele.name+'</td>'
+                        str+= '<td class=\'td1\'>'+ele.age+'</td>'
+                        str+= '<td class=\'td1\'>'+ele.city+'</td>'
+                        str+= '<td class=\'td1\'>'+ele.tech+'</td>'
+                        str+= '</tr>'
+                        return str
+                })
+
+                let html = "<table class=\'table1\'>"+pMap.join("")+"</table>"
+                console.log(html)
+                let element = document.getElementById("persons")
+                element.innerHTML = html
+            }
+    </script>
+</body>
+</html>

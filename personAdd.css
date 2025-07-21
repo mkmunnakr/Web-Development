@@ -1,0 +1,19 @@
+.table1 {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* This ensures equal space for each cell */
+}
+
+.td1 {
+    border: 1px solid #444;
+    padding: 8px;
+    text-align: center;
+    word-wrap: break-word; /* If long text comes in */
+}
+
+.td1 {
+    width: 25%; /* If 4 columns, divide 100% by 4 */
+}
+button {
+    margin: 5px;
+}

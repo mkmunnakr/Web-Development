@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Person</title>
+    <link rel="stylesheet" href="personAdd.css">
+</head>
+<body>
+    <div id="details"></div><br>
+    <div id="persons"></div>
+    <script>
+        let persons = [
+        {name:'Jack',age:28,city:'London',tech:'Android'},
+        {name:'Mary',age:32,city:'Paris',tech:'React'},
+        {name:'Bob',age:35,city:'New York',tech:'Angular'},
+        {name:'Steve',age:26,city:'Delhi',tech:'Spring'},
+        ]
+
+        let str = 'Name:<input type="text" id="name"><br/>'
+            str+= 'Age:<input type="text" id="age"><br/>'
+            str+= 'City:<input type="text" id="city"><br/>'
+            str+= 'Technology:<input type="text" id="tech"><br/>'
+            str+= '<button onclick=\'addPerson()\'>Add Person</button>'
+            str+= '<button onclick=\'removePerson()\'>Remove Person</button>'
+            let div = document.getElementById('details')
+            div.innerHTML = str;
+
+    function addPerson(){
+        let name = document.getElementById('name').value
+        let age = document.getElementById('age').value
+        let city = document.getElementById('city').value
+        let tech = document.getElementById('tech').value
+
+        let exists = persons.some(function(ele){
+            return ele.name.toLowerCase() === name.toLowerCase()
+        })
+
+    if(exists){
+        alert("Name already exists")
+    } else {
+        let p = {name, age, city, tech}
+        persons.push(p)
+        showPerson()
+    }
+}
+
+        function removePerson(){
+            let inputName = document.getElementById('name').value
+            let index = persons.findIndex(function(ele){
+                return ele.name == inputName;
+            });
+            if(index>=0){
+                persons.splice(index,1)
+                showPerson()
+            } else {
+                alert("'"+ inputName+"' not found.")
+            }
+        }
+            showPerson()
+            function showPerson(){
+                let pMap = persons.map(function(ele){
+                    let str = "<tr>"
+                        str+= '<td class=\'td1\'>'+ele.name+'</td>'
+                        str+= '<td class=\'td1\'>'+ele.age+'</td>'
+                        str+= '<td class=\'td1\'>'+ele.city+'</td>'
+                        str+= '<td class=\'td1\'>'+ele.tech+'</td>'
+                        str+= '</tr>'
+                        return str
+                })
+
+                let html = "<table class=\'table1\'>"+pMap.join("")+"</table>"
+                console.log(html)
+                let element = document.getElementById("persons")
+                element.innerHTML = html
+            }
+    </script>
+</body>
+</html>

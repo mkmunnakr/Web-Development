@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <link rel="stylesheet" href="productAdd.css">
+</head>
+<body>
+    <div id="product"></div>
+    <div id="products"></div>
+
+    <script>
+
+        let products = [
+        {prod:"Maggi" ,Quantity:28},
+        {prod:"Perk" ,Quantity:7},
+        {prod:"Gems" ,Quantity:11},
+        {prod:"Lindt" ,Quantity:4},
+        {prod:"Nutties" ,Quantity:20},
+
+    ];
+ 
+        let str = 'Name:<input type="text" id="prod"><br/>'
+            str+= 'Quantity:<input type="text" id="Quantity"><br/>'
+            str+= '<button onclick=\'addProduct()\'>Add Product</button>'
+            let div = document.getElementById('product');
+            div.innerHTML = str;
+
+    function addProduct() {
+         let st ={}
+            st.prod = document.getElementById('prod').value
+            st.Quantity = document.getElementById('Quantity').value
+            products.push(st)
+             showProducts()
+    }
+    function edit(prod){
+        let st = products.find(function(st1){
+            return st1.prod == prod ;
+
+        });
+        let str = 'Name:<input type="text" id="prod" readOnly value=\''+st.prod+'\'><br/>'
+            str+= 'Quantity:<input type="text" id="Quantity" value=\''+st.Quantity+'\'><br/>'
+            str+= '<button onclick=\'addProduct()\'>Add Product</button>'
+            str+= '<button onclick=\'edit2()\'>Update</button>'
+            let div = document.getElementById('product');
+            div.innerHTML = str;
+    }
+    function edit2(){
+        let prod = document.getElementById('prod').value
+        let st = products.find(function(st1){
+            return st1.prod == prod
+        })
+        st.prod = document.getElementById('prod').value
+        st.Quantity = document.getElementById('Quantity').value
+        showProducts()
+    }
+    showProducts();
+        function showProducts(){
+            
+            let stMap = products.map(function(ele){
+                let str = "<tr>"
+                    str+= '<td class=\'td1\'>'+ele.prod+'</td>'
+                    str+= '<td class=\'td1\'>'+ele.Quantity+'</td>'
+                    str+= '<td class="td1"><button class="remove" onclick="remove(\''+ele.prod+'\')">Remove</button>'
+                    str+= '<td class="td1"><button class="editBtn" onclick="edit(\''+ele.prod+'\')">Edit</button>'
+                    str+='</tr>'
+                    return str;
+            });
+            
+            let html = "<table class=\"table1\">"+stMap.join("")+"</table>"; 
+            console.log(html);
+            let element= document.getElementById('products')
+            element.innerHTML = html
+            
+        }
+        function remove(prod) {
+            let index = products.findIndex(function(ele){
+                return ele.prod == prod;
+            });
+            if(index>=0)
+            products.splice(index,1);
+            showProducts();
+        }
+    </script>
+</body>
+</html>

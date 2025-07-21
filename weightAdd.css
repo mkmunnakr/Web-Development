@@ -1,0 +1,36 @@
+.table1 {
+    border: 1px solid white;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.td1 {
+    font-weight: bold;
+    color: white;
+    border: 1px solid white;
+    background-color: red;
+    text-align: center;
+    
+    
+}
+.td2 {
+    font-weight: bold;
+    color: white;
+    border: 1px solid white;
+    background-color: green;
+    text-align: center;
+    }
+.td3 {
+    font-weight: bold;
+    color: white;
+    border: 1px solid white;
+    background-color: grey;
+    text-align: center;
+    }
+.th1 {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    padding-left: 15px;
+    padding-right: 15px;
+}

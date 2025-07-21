@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select and option</title>
+</head>
+<body>
+    <select id="dd01" >
+       
+        <option disabled selected>Select the course</option>  <!-- disable is work for not select this option  -->
+        <option value="1">Javascript</option>
+        <option value="2">React</option>
+        <option value="3">Angular</option>
+    </select>    
+     <select id="dd02">
+        <option>Select the course</option>
+        <option>Javascript</option>
+         <option selected>React</option>  <!-- selected is the show the top option -->
+        <option>Angular</option>
+    </select>
+    <button onclick="display()">Display</button> 
+    <script>
+        function display(){
+           
+            let dd1 = document.getElementById('dd01')
+            console.log(dd1.value)
+            let dd2 = document.getElementById('dd02')
+            console.log(dd2.value)
+            dd1.value = '1'
+             dd2.value = 'React' //change the dropdown value in selected 
+
+           
+        }
+    </script>
+</body>
+</html>
