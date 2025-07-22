@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <link rel="stylesheet" href="mouse_event.css">
+</head>
+<body>
+      <h4 id="title1" onmouseover="mouseover(this)" 
+     onmouseover="mouseout(this)">Checking Events</h4>   <!--onclick="clicked(this)"
+     onmouseover="mouseover(this)" 
+     onmouseover="mouseout(this)"
+     onmousemove="mousemove(this)"this mins elem pass -->
+    Text 1 :<input type="text" id="txt1"
+        onchange="change(this)"
+        onkeydown="keydown(this)"
+        onkeypress="keypress(this)"
+        onkeyup="keyup(this)"
+        onmouseover="mouseover(this)"
+        onmouseout="mouseout(this)"
+        onfocus="focusin(this)"
+        onblur="focusout(this)"
+    >
+    <br>
+    <button id="btn1" 
+    onclick="clicked(this)"
+    onmouseover="mouseover(this)"
+    onmouseout="mouseout(this)">Button</button>
+    <br>
+    <select  id="dd1"
+        onchange="change(this)"
+        onfocus="focusin(this)"
+        onblur="focusout(this)"
+    >
+        <option>Apple</option>
+        <option>Aeroplane</option>
+        <option>Banana</option>
+        <option>Bat</option>
+        <option>Ball</option>
+        <option>Cat</option>
+    </select>
+<script>
+    function change(elem){
+        console.log("onchange",elem.id,event);
+    }
+    function clicked(elem){
+        console.log("onclick",elem.id,event);
+    }
+    function mouseover(elem){
+        console.log("onmouseover",elem.id,event);
+        elem.className='mouseStyle';
+    }
+    function mouseout(elem){
+        console.log("onmouseout",elem.id,event);
+        elem.className='';
+    }
+    function mousemove(elem){
+        console.log("onmousemove",elem.id,event);
+    }
+    function keydown(elem){
+        console.log("keydown",elem.id,event);
+    }
+    function keyup(elem){
+        console.log("keyup",elem.id,event);
+    }
+    function focusin(elem){
+        console.log("onfocusin",elem.id,event);
+        elem.className='focusStyle';
+    }
+    function focusout(elem){
+        console.log("onfocusout",elem.id,event);
+        elem.className='';
+    }
+</script>
+    
+</body>
+</html>
