@@ -1,0 +1,31 @@
+<!-- Given the radio buttons , implement 
+a) Get checked value using getElementById 
+b) Get checked value using getElementsById-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3</title>
+</head>
+<body>
+    What do you know best <br/>
+    <input type="radio" name="tech" value="JavaScript" id="r1">JavaScript<br>
+    <input type="radio" name="tech" value="React" id="r2">React<br>
+    <input type="radio" name="tech" value="Angular" id="r3">Angular<br>
+    <button onclick="showChecked()">Show Checked Values</button><br/>
+    <script>
+        function showChecked(){
+            //getElementsByName - collection of all the elements matching the name
+            let value='';
+            let names = document.getElementsByName("tech");
+            console.log(names);
+            for (let i=0;i<names.length;i++){
+                if(names[i].checked)
+                  value = names[i].value;
+            }
+            console.log(value);
+        }
+    </script>
+</body>
+</html>
