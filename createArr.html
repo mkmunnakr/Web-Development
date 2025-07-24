@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3</title>
+</head>
+<body>
+    You are given input data where the values
+    entered by a user are provided in an array of string 
+    an array of string.
+    Use map to create a clean array. Any string is  null 
+    or empty string should be replace by 'NA'. 
+    Use logical operators instead of if. 
+    <script>
+        const arr = ['A',"Hello",'','B','','C'];
+        const arr1 = arr.map(function(val){
+            return val || 'NA';
+        });
+        console.log(arr1);
+    </script>
+    
+</body>
+</html>

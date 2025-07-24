@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Task 9</title>
+</head>
+<body>
+    (a) Given a number  x, if it is non zero return x otherwise 25.
+    
+    <script>
+        let x = 0;
+        const result = x === 0 ? 25 : x;
+        console.log("Output of a : ")
+        console.log(result);
+    </script>
+    (b) Given numbers m and n , returns m if it is non zero ,otherwise return n 
+        if it is non zero otherwise returns 12.
+        <script>
+            let m = 12;
+            let n = 3;
+            console.log("Output of b : ");
+            console.log(m || n || 12);
+        </script>
+        (c) Given a string str, if it is not an empty string returns str otherwise 'A'.
+    <script>
+        let str = 'Kanhaiya';
+        console.log("Output of c : ")
+        console.log(str || 'A');
+    </script>
+    (d) Given a number x, returns a JSON with the field discount 
+    whose value is x(if x is not zero), otherwise it is 12.5
+   <script>
+    let y = 2;
+    function getDiscount(){
+        return { 
+            "discount" : x != 0 ? x : 12.5 
+        }
+    
+    }
+    console.log("Output of d : ")
+    console.log(getDiscount(y));
+   </script>
+</body>
+</html>

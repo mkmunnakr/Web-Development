@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 4 b</title>
+</head>
+<body>
+    Given an array of JSON , with each JSON having 
+    the fields grade1 and grade2. Use map to create an array of final grades.
+    Use logical Operators instead of if.
+    <script>
+        let sts = [
+        {gr1:'A', gr2:'B'},
+        {gr1:'', gr2:'C'},
+        {gr1:'B', gr2:''},
+        {gr1:'C', gr2:'B'},
+        {gr1:'', gr2:''},
+        ];
+        const arr = sts.map(function(val){
+            return {finalGrade : val.gr1||val.gr2||'D'};
+        });
+        console.log(arr);
+    </script>
+</body>
+</html>
