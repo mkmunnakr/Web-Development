@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 9</title>
+</head>
+<body>
+    (i)Given strings s1 and s2, returns s2 if both the strings are not empty otherwise returns an empty string.
+   <script>
+        let s1 = "M";
+        let s2 = "K";
+        console.log("Output of i : ")
+        console.log(s1 && s2 || "")
+   </script>
+   (j) Given numbers num1 and num2, returns a JSON<br> with the field myNum whose value is <br>num1 (if num1 is non zero), otherwise if <br>num2 (if num2 is non zero), otherwise it is -1.
+   <script>
+    let num1 = 4;
+    let num2 = 8;
+    function getMyNum(num1, num2) {
+        return { myNum: num1 || num2 || -1 };
+    }
+    console.log("Output of j : ");
+    console.log(getMyNum(num1, num2));
+   </script>
+</body>
+</html>

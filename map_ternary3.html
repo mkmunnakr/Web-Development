@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 12</title>
+</head>
+<body>
+    (c) Given an array of numbers, use map and <br>ternary operator to create an array where 10 is added to all numbers greater than 100 <br>otherwise 25 has been subtracted
+    <script>
+        let numsArr = [24,56,87,100,256,489,467,498];
+        let newNumsArr = numsArr.map(function(val){
+            return val > 100 ? val+10 : val-25
+        })
+        console.log(numsArr);
+        console.log(newNumsArr);
+    </script>
+</body>
+</html>

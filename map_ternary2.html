@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 12</title>
+</head>
+<body>
+    (b) Given an array of strings, use map and <br>ternary operator to create an array where<br> if the string has more than 5 <br>characters, the first 5 are there otherwise it has the entire string
+    <script>
+        let arr = ["Kanhaiya","Munna","Ram"];
+        let newArr = arr.map(function(val){
+            return val.length >= 5 ? val.substring(0,5) : val
+        })
+        console.log(newArr)
+    </script>
+</body>
+</html>

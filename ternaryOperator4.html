@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 8</title>
+</head>
+<body>
+    Given an array of strings, use map and ternary operator 
+    to create another array of strings where if any string does 
+    not start wit a, add an x in front of it.
+    <script>
+        let strs = ['a','b','ab','c','aaaa','baba'];
+        const arr = strs.map(function(val){
+            return val.startsWith('a') ? val : 'x'+val;
+        });
+        console.log(arr);
+    </script>
+</body>
+</html>

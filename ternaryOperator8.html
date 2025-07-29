@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks 10</title>
+</head>
+<body>
+    (e)Given twonumbers n1 and n2, returns a JSON with a field maxValue <br>whose value is the larger of n1 and n2<br>
+    <script>
+        let n1 = 49;
+        let n2 = 94;
+        function getMaxValue(n1, n2){
+            return {
+                maxValue : n1 > n2 ? n1 : n2
+            };
+        };
+        console.log("Output of e : ");
+        console.log(getMaxValue(n1,n2));
+    </script>
+    (f)Given a number x, returns a JSON with the fields marks and status.<br>The value of the field marks is x. The value of the field status<br> is Pass if it greater than or equal to 40 otherwise Fail.
+    <script>
+        let x = 30;
+        function studentData(x){
+            return {
+                marks : x ,
+                status : x >= 40 ? "Pass" : "Fail"
+            };
+        };
+        console.log("Output of f : ");
+        console.log(studentData(x));
+    </script>
+</body>
+</html>

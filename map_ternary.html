@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks 12</title>
+</head>
+<body>
+    (a)Given an array of strings, use map and ternary operator to create <br>an array where if the string has the character x in it, the new <br>array should have 'GotX' otherwise it should have 'NOT Found<br>
+    <script>
+        let arr =[ "munnaKumar",'xmax']
+        const newArr = arr.map(function(val){
+            return val.includes('x') ? 'GotX' : "NOT Found"
+        });
+        console.log(newArr)
+    </script>
+</body>
+</html>

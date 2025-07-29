@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 11</title>
+</head>
+<body>
+    Given an arrayof numbers, use reduce and ternary operator tocompute <br>(a) max number<br> (b) min numberm <br>(c) count the numbers greater than 25
+    <script>
+        let nums = [10,5,2,7,10,26,28,90,300,500];
+        let max = nums.reduce(function(acc,curr){
+            return curr > acc ? curr : acc
+        },0);
+        let min = nums.reduce(function(acc,curr){
+            return curr > acc ? acc : curr
+        },nums[0]);
+        console.log("maxValue : ", max);
+        console.log("minValue : ", min);
+        let count = nums.reduce(function(acc,curr){
+             return curr > 25 ? acc+1 : acc;
+        },0);
+        console.log("count : " , count);
+    </script>
+</body>
+</html>
