@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 3</title>
+</head>
+<body>
+    <script>
+        let double1 = function(x) {
+            console.log('Function Expression');
+            return x*2;
+        }
+
+        let double2 = (x) => {
+            console.log('Arrow Function');
+            return x*2;
+        }
+
+        let double3 = (x) => 2*x;
+        let double4 = x => 2*x;
+
+        console.log((double1(2,3)));
+        console.log((double2(2,3)));
+        console.log((double3(2,3)));
+        console.log((double4(2,3)));
+    </script>
+</body>
+</html>

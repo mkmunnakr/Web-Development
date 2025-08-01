@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 2</title>
+</head>
+<body>
+    <script>
+        let mult1 = function(x,y) {
+            console.log('Function Expression');
+            return x*y;
+        }
+
+        let mult2 = (x,y) => {
+            console.log('Arrow Function');
+            return x*y;
+        }
+
+        let mult3 = (x,y) => x*y;
+
+        console.log((mult1(2,3)));
+        console.log((mult2(2,3)));
+        console.log((mult3(2,3)));
+
+    </script>
+</body>
+</html>

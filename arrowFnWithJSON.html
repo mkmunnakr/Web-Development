@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice 5</title>
+</head>
+<body>
+    <script>
+        let putData1 = function(inpName, inpAge) {
+            console.log('Function Expression');
+            return {name:inpName , age:inpAge}
+        }
+
+        console.log(putData1('Jack',25));
+
+        let putData2 = (inpName, inpAge) => {
+            console.log('Arrow Function');
+            return  {name:inpName , age:inpAge};
+        }
+        console.log(putData2('Jack',25));
+
+        let putData3 = (inpName, inpAge) =>({name:inpName , age:inpAge});
+        console.log(putData3('Bob', 35));
+    </script>
+</body>
+</html>

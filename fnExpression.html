@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+</head>
+<body>
+    <script>
+        function add1(x,y) {
+            console.log('Standard Function');
+            return x+y;
+        }
+
+        let add2 = function(x,y) {
+            console.log('Function Expression');
+            return x+y;
+        }
+        console.log(add1(1,2));
+        console.log(add2(1,2));
+
+        // New function call kar sakte hai
+        let add3 = add2 ;
+        console.log(add3(2,3));
+    </script>
+</body>
+</html>
