@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 2</title>
+</head>
+<body>
+    let has block scope <br>
+    var has function scope 
+    <script>
+        let x = 10;
+        if (x>5){
+            var a1 = 20;
+            var a2 = 25;
+            a3 = 30;  //global variable
+            console.log('a1=',a1);
+            console.log('a2=',a2);
+            console.log('a3=',a3);
+        }
+        console.log('a1=',a1);
+        //console.log('a2=',a2); // it is wrong because a2 is  block scope
+        console.log('a3=',a3);
+    </script>
+</body>
+</html>
