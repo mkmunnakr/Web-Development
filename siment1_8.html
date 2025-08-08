@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Forms </title>
+</head>
+<body>
+<h1> Forms </h1>
+<form action = "/submit" method = "post">
+<label>Name</label>
+<input type = "text" name = "username"><br><br>
+
+<label>Password</label>
+<input type = "password" name = "password"><br><br>
+
+<label>Gender</label>
+<input type = "radio" name="gender" value = "male">Male
+<input type = "radio" name="gender" value = "female">Female <br><br>
+
+<label>Email</label>
+<input type = "email" name = "email"><br><br>
+
+<label>Country</label>
+<select name = "country">
+<option value = "india">India</option>
+<option value = "USA">USA</option> 
+</select><br><br>
+
+<label> Message </label>
+<textarea name="Message" rows="4" cols="30"></textarea><br><br>
+
+<label>Hobbies </label>
+<label><input type="checkbox" name="hobby" value="reading"> Reading</label>
+<label><input type="checkbox" name="hobby" value="traveling"> Traveling</label>
+<label><input type="checkbox" name="hobby" value="coading"> Coading</label> <br><br>
+
+<button type = "submit"> Submit </button>
+</form>
+</body>
+</html>
