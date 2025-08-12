@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div id="show">
+           
+        </div>
+    </div>
+    <script>
+        showForm();
+        function showForm(){
+            let str = makeTextField('prodName','Product Name','Enter the product name');
+            str+= makeTextField('price','Price','Enter the price');
+            str+= '<button class="btn btn-primary" onclick="submitProduct()">Submit</button>'
+            document.getElementById('show').innerHTML = str;
+        }
+        function makeTextField(id,label,placeholder=''){
+            let str = '<div class="form-group">';
+            str+= '<label>'+label+'</label>';
+            str+= '<input type="text" class="from-control" id="'+id+'" placeholder="'+placeholder+'">';
+            str+= '</div>';
+            return str;
+        }
+    </script>
+</body>
+</html>

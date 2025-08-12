@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>SAS</title>
+</head>
+<body>
+    <div class="container">
+        <div id="show">
+        </div>
+    </div>
+    <script>
+        const products = [
+        {product:'Pepsi',price:25},
+        {product:'Dairy Milk',price:40},
+        {product:'Colgate',price:80},
+        {product:'Maggi',price:15},
+        {product:'Snickers',price:50},
+        {product:'Nescafe',price:10},
+        ];
+        show();
+        function show(){
+            let html = showProduct2();
+            document.getElementById('show').innerHTML = html;
+        }
+        function showProduct2(){
+            let str = '';
+            for(let i = 0; i < products.length; i += 3){
+                str+= '<div class="row mb-3">'; // start a new row
+                for(let j = i; j< i + 3 && j < products.length; j++){
+                let {product,price} = products[j];
+                str+= '<div class="col-md-4">';
+                str+= '<div class="border p-2">';
+                str+= '<div class="col-8"><strong style="color:red">Product:</strong>'+product+'</div>';
+                str+= '<div class="col-4"><strong style="color:red">Price:</strong>'+price+'</div>';
+                str+= '</div>';
+                str+= '</div>';
+            }
+            str+= '</div>';//End row
+        }
+        return str;
+           
+        }
+    </script>
+</body>
+</html>
