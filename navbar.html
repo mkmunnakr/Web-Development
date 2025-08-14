@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div id="show"></div>
+    </div>
+
+    <script>
+        show();
+        function show(active=0) {
+            let str = makeNavbar(active);
+            console.log(str);
+            document.getElementById("show").innerHTML = str;
+
+        }
+        function showProducts(){
+            show(1);
+        }
+        function addProducForms() {
+            show(2);
+        } 
+
+        function makeNavbar(active=0) {
+            //1: Show Products 2: Add a Product
+            let str = '<nav class="navbar navbar-expand-lg navbar-light bg-light">';
+            str+= '<a class="navbar-brand" href="#">Store System</a>';
+            str+= '<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">';
+            str+=  '<span class="navbar-toggler-icon"></span>';
+            str+= '</button>'
+            str+= '<div class="collapse navbar-collapse" id="navbarNavDropdown">';
+            str+= '<ul class="navbar-nav">';
+            let active1 = active===1 ? 'active' : '';
+            let active2 = active===2 ? 'active' : '';
+            str+= '<li class="nav-item '+active1+'">';
+            str+= '<a class="nav-link" onclick="showProducts()">Show Products</a>';
+            str+= '</li>';
+            str+= '<li class="nav-item '+active2+'">';
+            str+= '<a class="nav-link" onclick="addProducForms()">Add a  Product</a>';
+            str+= '</li>';
+            str+= '</ul>';
+            str+= '</div>';
+            str+= '</nav>';
+            return str;
+        }
+    </script>
+    
+</body>
+</html>
