@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>SAS</title>
+</head>
+<body>
+    <div class="container">
+        <div id="show">
+            <!-- <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    Discount
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="discount" value="2">
+                <label class="form-check-label">
+                    2%
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="discount" value="5">
+                <label class="form-check-label">
+                    5%
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="discount" value="0">
+                <label class="form-check-label">
+                    None
+                </label>
+            </div>
+            <div class="form-group">
+                <select id="supplier" class="form-control">
+                    <option disabled value="" selected>Select Supplier</option>
+                    <option>ABC Limited</option>
+                    <option>James & Co.</option>
+                    <option>Bob Ibc.</option>
+                </select>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="delivery">
+                <label class="form-check-label">Delivery Available</label>
+            </div> -->
+        </div>
+    </div>
+    <script>
+        const discountOptions = [
+          {display:'2%', value:'2'},
+          {display:'5%', value:'5'},
+          {display:'None', value:'0'}
+          ];
+          const Suppliers = ['ABC Limited', 'James & Co.', 'Bob Inc.'];
+          show();
+        function show() {
+            let html = makeRadios(discountOptions,'Discount','discount');
+            html+= makeDropdown('supplier',Suppliers,'Select Supplier');
+            html+= makeCheckbox('delivery','Delivery Available');
+            console.log(html);
+            document.getElementById('show').innerHTML = html;
+        }
+        function makeRadios(arr,label,name) {
+            const arr1 = arr.map(opt =>{
+                let {display,value} = opt;
+                let str = '<div class="form-check form-check-inline">';
+                str+= '<input class="form-check-input" type="radio" name="'+name+'" value="'+value+'">'
+                str+= '<label class="form-check-label">'+display+'</label>';
+                str+= '</div>';
+                return str;
+            });
+            let s1 = '<div class="form-check form-check-inline">';
+            s1+= '<label class="form-check-label">'+label+'</label>';
+            s1+= '</div>';
+            s1+= arr1.join('');
+            return s1;
+        }
+        function makeDropdown(id,options,header) {
+            const arr1 = options.map(opt =>{
+                return '<option>'+opt+'</option>';
+            });
+            let s1 = '<div class="form-group">';
+            s1+= '<select id="supplier" class="form-control">';
+            s1+= '<option value="" disabled selected>'+header+'</option>';
+            s1+= arr1.join('');
+            s1+= '</select>';
+            s1+= '</div>';
+            return s1;
+
+        }
+        function makeCheckbox(id,label) {
+            let str = '<div class="form-check">';
+            str+= '<input class="form-check-input" type="checkbox" id="'+id+'">';
+            str+= '<label class="form-check-label">'+label+'</label>';
+            str+= '</div>';
+            return str;
+        }
+    </script>
+</body>
+</html>
